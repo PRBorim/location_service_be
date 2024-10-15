@@ -1,0 +1,18 @@
+type Query {
+    locations: [Location]
+    locationsByPostcode(postcodeList: [String]): [Location]
+    postcodeByLocation(
+        country: String
+        state: String
+        city: String
+        street: String
+    ): [Location]
+}
+
+type Location {
+    postcode: String
+    city: String
+    country: String
+    state: String
+    street: String
+}

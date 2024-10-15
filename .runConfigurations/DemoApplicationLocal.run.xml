@@ -1,0 +1,27 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="DemoApplicationLocal" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+    <envs>
+      <env name="POSTGRES_DB" value="logdatabase" />
+      <env name="POSTGRES_USER" value="myuser" />
+      <env name="POSTGRES_PASSWORD" value="secret" />
+      <env name="POSTGRES_SERVICE_ADDRESS" value="localhost" />
+      <env name="POSTGRES_SERVICE_PORT" value="5432" />
+      <env name="FAKER_SERVICE_ADDRESS" value="localhost" />
+      <env name="FAKER_SERVICE_PORT" value="3030" />
+      <env name="REDIS_SERVICE_ADDRESS" value="localhost" />
+      <env name="REDIS_SERVICE_PORT" value="6379" />
+    </envs>
+    <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+    <module name="location_service_be" />
+    <option name="SPRING_BOOT_MAIN_CLASS" value="com.location_app.demo.DemoApplication" />
+    <extension name="coverage">
+      <pattern>
+        <option name="PATTERN" value="com.location_app.demo.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

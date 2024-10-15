@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Very Simple UI - Location Search Demo Project</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<div class="container">
+
+    <div><h1>Location search</h1></div>
+    <form action="#" th:action="@{/ui/locations/search}">
+        <div>
+            <label>By Postcode: </label>
+            <input type="text" placeholder="Postcodes" name="postcodeList" th:value="${postcodeList}">
+            <input type="submit" value="Search">
+        </div>
+    </form>
+    <form action="#" th:action="@{/ui/postcode/search}">
+        <div>
+            <label>By Location: </label>
+            <input type="text" placeholder="Country" name="country" th:value="${country}">
+            <input type="text" placeholder="State" name="state" th:value="${state}">
+            <input type="text" placeholder="City" name="city" th:value="${city}">
+            <input type="text"placeholder="Street" name="street" th:value="${street}">
+            <input type="submit" value="Search">
+        </div>
+    </form>
+
+
+
+    <div th:if="${not #lists.isEmpty(locations)}">
+        <h2>Location List</h2>
+        <table>
+            <tr>
+                <th>Postcode</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>State</th>
+                <th>Street</th>
+            </tr>
+            <tr th:each="location : ${locations}">
+                <td th:text="${location.postcode}"></td>
+                <td th:text="${location.city}"></td>
+                <td th:text="${location.country}"></td>
+                <td th:text="${location.state}"></td>
+                <td th:text="${location.street}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

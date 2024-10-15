@@ -1,0 +1,39 @@
+### PROVIDER MOCK - REST
+###
+GET http://localhost:3030/v1/locations
+
+### REST
+###
+GET http://localhost:8080/locations
+###
+GET http://localhost:8080/locations/search?cep=1234-4,1234-3
+###
+GET http://localhost:8080/postcode/search?country=Country 1
+###
+GET http://localhost:8080/postcode/search?country=Country 2&state=State 2&city&street
+###
+GET http://localhost:8080/postcode/search?country=&state=&city=&street=Street 3
+###
+GET http://localhost:8080/postcode/search?country=&state=&city=&street
+
+### GQL
+GRAPHQL http://localhost:8080/graphql
+
+query{
+    locations {postcode}
+    locationsByPostcode(
+        postcodeList: [
+            "1234-4"
+            "1234-3"
+        ]
+    ) {postcode}
+}
+###
+GRAPHQL http://localhost:8080/graphql
+
+query{
+    q1: postcodeByLocation(country: "Country 1") {postcode}
+    q2: postcodeByLocation(street: "Street 2", city: "City 2") {postcode}
+    q3: postcodeByLocation(city:"City 3") {postcode}
+    q4: postcodeByLocation(state:"State 4") {postcode}
+}

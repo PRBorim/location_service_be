@@ -1,0 +1,41 @@
+services:
+  app:
+    build: ./
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - faker
+      - redis
+    environment:
+      - 'POSTGRES_DB=logdatabase'
+      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_PASSWORD=secret'
+      - 'POSTGRES_SERVICE_ADDRESS=postgres'
+      - 'POSTGRES_SERVICE_PORT=5432'
+      - 'FAKER_SERVICE_ADDRESS=faker'
+      - 'FAKER_SERVICE_PORT=3030'
+      - 'REDIS_SERVICE_ADDRESS=redis'
+      - 'REDIS_SERVICE_PORT=6379'
+
+  postgres:
+    image: 'postgres:latest'
+    environment:
+      - 'POSTGRES_DB=logdatabase'
+      - 'POSTGRES_USER=myuser'
+      - 'POSTGRES_PASSWORD=secret'
+    ports:
+      - '5432:5432'
+
+  faker:
+    image: dotronglong/faker:stable
+    volumes:
+      - ./src/main/resources/mocks:/app/mocks
+    ports:
+      - "3030:3030"
+
+  redis:
+    image: "redis:latest"
+    command: redis-server #--requirepass Redis2019!
+    ports:
+      - "6379:6379"

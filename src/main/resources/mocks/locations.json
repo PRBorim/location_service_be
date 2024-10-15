@@ -1,0 +1,52 @@
+{
+  "request": {
+    "method": "GET",
+    "path": "/v1/locations"
+  },
+  "response": {
+    "body": [
+      {
+        "postcode": "1234-1",
+        "city": "City 1",
+        "country": "Country 1",
+        "state": "State 1",
+        "street": "Street 1"
+      },
+      {
+        "postcode": "1234-2",
+        "city": "City 2",
+        "country": "Country 2",
+        "state": "State 2",
+        "street": "Street 2"
+      },
+      {
+        "postcode": "1234-3",
+        "city": "City 3",
+        "country": "Country 3",
+        "state": "State 3",
+        "street": "Street 3"
+      },
+      {
+        "postcode": "1234-4",
+        "city": "City 4",
+        "country": "Country 4",
+        "state": "State 4",
+        "street": "Street 4"
+      },
+      {
+        "postcode": "1234-5",
+        "city": "City 5",
+        "country": "Country 5",
+        "state": "State 5",
+        "street": "Street 5"
+      },
+      {
+        "postcode": "1234-6",
+        "city": "City 6",
+        "country": "Country 6",
+        "state": "State 6",
+        "street": "Street 6"
+      }
+    ]
+  }
+}
