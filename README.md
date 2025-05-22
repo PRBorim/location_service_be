@@ -9,4 +9,4 @@ Sample project developed for demonstration purposes.
 * Usage of [SOLID](https://en.wikipedia.org/wiki/SOLID) concepts
 
 
-![demoAppDrawing.png](src%2Fmain%2Fresources%2FdemoAppDrawing.png)
+![demoAppDrawing.png](src%2Fmain%2Fresources%2FdemoAppDrawing-corrected.png)
